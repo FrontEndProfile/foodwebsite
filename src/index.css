@@ -67,13 +67,17 @@ p {
 
 /* ================= TABS =========== */
 .scroller {
-    height: 35vh;
+    /* height: 35vh; */
     overflow-y: scroll;
+    box-shadow: rgba(149, 157, 165, 0.151) 0px 6px 18px;
 }
 
 .slider {
     width: 100%;
     margin: 40px auto;
+}
+.slick-list {
+    padding-bottom: 30px;
 }
 
 .card .card-body .body {
