@@ -11,10 +11,11 @@ const SlickSlider = ({ children }) => {
 
   useEffect(() => {
     $(sliderRef.current).slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
+      // slidesToShow: 3,
+      // slidesToScroll: 1,
+      // autoplay: true,
+      // autoplaySpeed: 2000,
+      // arrows:false,
       // Add other options as needed
     });
 
@@ -30,6 +31,8 @@ const SlickSlider = ({ children }) => {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
+      arrows:false,
+
       // Add other options as needed
     });
   }, [children]);

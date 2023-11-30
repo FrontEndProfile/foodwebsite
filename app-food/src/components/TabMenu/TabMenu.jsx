@@ -1,9 +1,6 @@
-// YourMainComponent.js
 import React, { useState } from "react";
-import Slider from "./Slider";
 import Card from "./Card";
 import SlickSlider from "./SlickSlider";
-import $ from "jquery";
 
 const TabMenu = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -12,15 +9,6 @@ const TabMenu = () => {
     setActiveTab(tabNumber);
   };
 
-  //   const renderSlider = (sliderNumber, data) => (
-  //     <div
-  //       key={sliderNumber}
-  //       id={`slider-${sliderNumber}`}
-  //       style={{ display: activeTab === sliderNumber ? "block" : "none" }}
-  //     >
-  //       <Slider cards={data} />
-  //     </div>
-  //   );
 
   const renderSlider = (sliderNumber, data) => (
     <div
@@ -121,6 +109,14 @@ const TabMenu = () => {
   return (
     <section className="mt-5 pt-0 pt-md-5" id="menu">
       <div className="container">
+        <div class="row  mt-0 mt-md-5">
+          <div class="col-md-5">
+            <h6 class="red-color  font-weight-bold">OUR MENU</h6>
+            <h2 class="font-weight-bold">
+              Your Favourite Food Delivery Partner
+            </h2>
+          </div>
+        </div>
         <div className="row ">
           <div className="col-md-3 scroller" id="menu">
             {tabsData.map((tab) => (
@@ -142,7 +138,6 @@ const TabMenu = () => {
             ))}
           </div>
           <div className="col-md-8">
-            {/* {tabsData.map((tab) => renderSlider(tab.id, tab.data))} */}
             {tabsData.map((tab) => renderSlider(tab.id, tab.data))}
           </div>
         </div>

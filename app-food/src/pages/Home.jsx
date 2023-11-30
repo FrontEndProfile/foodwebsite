@@ -7,6 +7,12 @@ import DownloadApp from '../components/DownloadApp/DownloadApp'
 
 
 
+import heroLeftHome from "../assets/img1.png";
+import heroImgHome from "../assets/hero-img.png";
+import RatingHome from "../assets/rating.png";
+import backImgHeroHome from "../assets/bg.png";
+
+
 const Home = () => {
   const menuItems = [
     {
@@ -29,7 +35,25 @@ const Home = () => {
   
   return (
     <>
-      <Hero />
+      
+      <HeroSection
+        backgroundImage={backImgHeroHome}
+        buttonText="More Than Faster"
+        title="Be The Fastest In Delivering Your Food"
+        subTitle="Our Job is to fill your tummy with delicious food and with fast and free delivery"
+        heroImage={heroImgHome}
+      />
+
+      {/* <Hero
+        backgroundImage={backImgHeroHome}
+        buttonText="More Than Faster"
+        title="Be The Fastest In Delivering Your Food"
+        subTitle="Our Job is to fill your tummy with delicious food and with fast and free delivery"
+        showAdditionalContent={true} // You can toggle this based on your requirements
+        customerImage={heroLeftHome}
+        customerReviewRating={RatingHome}
+        heroImage={heroImgHome}
+      /> */}
       <FavoriteCards />
       <TabMenu menuItems={menuItems}/>
       <WhatSay/>
