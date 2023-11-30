@@ -1,376 +1,154 @@
-import React from 'react'
+// YourMainComponent.js
+import React, { useState } from "react";
+import Slider from "./Slider";
+import Card from "./Card";
+import SlickSlider from "./SlickSlider";
+import $ from "jquery";
 
 const TabMenu = () => {
-    return (
-        <section className="mt-5 pt-0 pt-md-5" id="menu">
-            <div className="container">
-                <div className="row  mt-0 mt-md-5">
-                    <div className="col-md-5">
-                        <h6 className="red-color  font-weight-bold">OUR MENU</h6>
-                        <h2 className="font-weight-bold">Your Favourite Food Delivery Partner</h2>
-                    </div>
-                </div>
-                <div className="row ">
-                    <div className="col-md-3 scroller " id="menu">
-                        <div className="mt-3 pointer   border-0 p-2" id="acc">
-                            <img src="images/burger.png" className="img-fluid" width="40" />
-                            <span className="pl-2">Burger</span>
-                        </div>
-                        <div className="mt-3 active-tab pointer border-0 p-2" id="sol" >
-                            <img src="images/piza.png" className="img-fluid" width="40" />
-                            <span className="pl-2">Pizza</span>
-                        </div>
-                        <div className=" mt-3 p-2 pointer border-0" id="exp" >
-                            <img src="images/cake.png" className="img-fluid" width="40" />
-                            <span className="pl-2">Cupcake</span>
-                        </div>
+  const [activeTab, setActiveTab] = useState(1);
 
-                        <div className=" mt-3 p-2 pointer border-0" id="vid" >
-                            <img src="images/cup.png" className="img-fluid" width="40" />
-                            <span className="pl-2">Ramen</span>
-                        </div>
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
 
-                        <div className="mt-3 p-2 pointer border-0" id="ana" >
-                            <img src="images/ice.png" className="img-fluid" width="40" />
-                            <span className="pl-2">Ice Cream</span>
-                        </div>
-                    </div>
-                    <div className="col-md-8">
-                        {/* <!-- ====================== ONE ============================= --> */}
-                        <div id="one" >
-                            <div className="center slider  mb-5">
-                                <div className="card  border-0 ">
-                                    <div className="card-body p-0">
-                                        <img src="images/burger1.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0 ">
-                                    <div className="card-body p-0">
-                                        <img src="images/burger1.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0 ">
-                                    <div className="card-body p-0">
-                                        <img src="images/burger1.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0 ">
-                                    <div className="card-body p-0">
-                                        <img src="images/burger1.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0 ">
-                                    <div className="card-body p-0">
-                                        <img src="images/burger1.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0 ">
-                                    <div className="card-body p-0">
-                                        <img src="images/burger1.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  //   const renderSlider = (sliderNumber, data) => (
+  //     <div
+  //       key={sliderNumber}
+  //       id={`slider-${sliderNumber}`}
+  //       style={{ display: activeTab === sliderNumber ? "block" : "none" }}
+  //     >
+  //       <Slider cards={data} />
+  //     </div>
+  //   );
 
-                        {/* <!-- ==========two================ --> */}
-                        <div id="two" style={{ display: 'none' }}>
-                            <div className="center slider  mb-5">
-                                <div className="card  border-0 mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/pizza1.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0 mb-5">
-                                    <div className="card-body  p-0">
-                                        <img src="images/pizza2.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card border-0 mb-5">
-                                    <div className="card-body p-0">
-                                        <div>
-                                            <img src="images/pizza3.png" className="img-fluid" />
-                                            <div className="body">
-                                                <h6>Italian Pizzza</h6>
-                                                <p><span>$</span> 8.56</p>
-                                                <button className="btn btn-order">Order Now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/pizza1.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body  p-0">
-                                        <img src="images/pizza2.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <div>
-                                            <img src="images/pizza3.png" className="img-fluid" />
-                                            <div className="body">
-                                                <h6>Italian Pizzza</h6>
-                                                <p><span>$</span> 8.56</p>
-                                                <button className="btn btn-order">Order Now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- ==========three================ --> */}
-                        <div id="three" style={{ display: 'none' }}>
-                            <div className="center slider  mb-5">
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- ================four================ --> */}
-                        <div id="four" style={{ display: 'none' }}>
-                            <div className="center slider  mb-5">
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/cupcake.jpg" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- ==========five================ --> */}
-                        <div id="five" style={{ display: 'none' }}>
-                            <div className="center slider mb-5">
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/ice-cream.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/ice-cream.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/ice-cream.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/ice-cream.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/ice-cream.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card  border-0  mb-5">
-                                    <div className="card-body p-0">
-                                        <img src="images/ice-cream.png" className="img-fluid" />
-                                        <div className="body">
-                                            <h6>Italian Pizzza</h6>
-                                            <p><span>$</span> 8.56</p>
-                                            <button className="btn btn-order">Order Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
-}
+  const renderSlider = (sliderNumber, data) => (
+    <div
+      key={sliderNumber}
+      id={`slider-${sliderNumber}`}
+      style={{ display: activeTab === sliderNumber ? "block" : "none" }}
+    >
+      <SlickSlider>
+        {data.map((card, index) => (
+          <Card key={index} {...card} />
+        ))}
+      </SlickSlider>
+    </div>
+  );
 
-export default TabMenu
+  const tabsData = [
+    {
+      id: 1,
+      label: "Burger",
+      data: [
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Italian Burger 1",
+          price: "8.56",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Italian Burger 2",
+          price: "9.99",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Spicy Burger",
+          price: "7.99",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Veggie Burger",
+          price: "6.99",
+        },
+      ],
+    },
+    {
+      id: 2,
+      label: "Pizza",
+      data: [
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Italian Pizza 1",
+          price: "8.56",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Italian Pizza 2",
+          price: "9.99",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Spicy Pizza",
+          price: "7.99",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Veggie Pizza",
+          price: "6.99",
+        },
+      ],
+    },
+    {
+      id: 3,
+      label: "Cupcake",
+      data: [
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Italian Cupcake",
+          price: "8.56",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Italian Cupcake",
+          price: "9.99",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Spicy Cupcake",
+          price: "7.99",
+        },
+        {
+          imageSrc: "/src/assets/pizza1.png",
+          title: "Veggie Cupcake",
+          price: "6.99",
+        },
+      ],
+    },
+    // Add more tabs as needed
+  ];
+
+  return (
+    <section className="mt-5 pt-0 pt-md-5" id="menu">
+      <div className="container">
+        <div className="row ">
+          <div className="col-md-3 scroller" id="menu">
+            {tabsData.map((tab) => (
+              <div
+                key={tab.id}
+                className={`mt-3 pointer border-0 p-2 ${
+                  activeTab === tab.id ? "active-tab" : ""
+                }`}
+                onClick={() => handleTabClick(tab.id)}
+              >
+                <img
+                  src={`/src/assets/${tab.label.toLowerCase()}.png`}
+                  className="img-fluid"
+                  width="40"
+                  alt={tab.label}
+                />
+                <span className="pl-2">{tab.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="col-md-8">
+            {/* {tabsData.map((tab) => renderSlider(tab.id, tab.data))} */}
+            {tabsData.map((tab) => renderSlider(tab.id, tab.data))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TabMenu;
